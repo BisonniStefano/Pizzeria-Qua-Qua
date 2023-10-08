@@ -1,0 +1,19 @@
+.divider-lg {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.divider-lg svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 117px;
+}
+
+.divider-lg .shape-fill {
+    fill: #ADFFFF;
+}

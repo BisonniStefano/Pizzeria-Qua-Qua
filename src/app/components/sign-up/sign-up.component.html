@@ -1,0 +1,36 @@
+<div class="container-lg">
+  <div class="row mt-5 justify-content-center">
+    <div class="col-sm-10 border rounded border-0 p-5 justify-content-center shadow">
+      <form class="row g-3" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+        <h1 class="text-center mb-3">Crea un nuovo account</h1>
+        <div class="col-sm-6">
+          <label class="form-label" for="name">Nome</label>
+          <input class="form-control" type="text" id="name" formControlName="name">
+          <div *ngIf="formGroup.get('name').invalid && formGroup.get('name').touched">
+            <p class="error">Inserisci un nome</p>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <label class="form-label" for="email">Email</label>
+          <input class="form-control" type="email" id="email" formControlName="email">
+          <div *ngIf="formGroup.get('email').invalid && formGroup.get('email').touched">
+            <p class="error">Inserisci un indirizzo email valido</p>
+          </div>
+        </div>
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+          <label class="form-label" for="password">Password</label>
+          <input class="form-control" type="password" id="password" formControlName="password">
+          <div *ngIf="formGroup.get('password').invalid && formGroup.get('password').touched">
+            <p class="error">La password deve essere lunga almeno 6 caratteri</p>
+          </div>
+        </div>
+        <div class="col-sm-3"></div>
+        <div class="col text-center">
+          <button class="btn btn-lg btn-primary mt-3" type="submit" [disabled]="!formGroup.valid">Registrati</button>
+          <br><br>Hai già un account? <a class="fw-bold" (click)="this.router.navigate(['/sign-in'])">Accedi</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

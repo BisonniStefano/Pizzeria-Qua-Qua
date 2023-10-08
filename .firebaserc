@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "pizzeria-qua-qua": {
+      "hosting": {
+        "pizzeria-qua-qua-angular": [
+          "pizzeria-qua-qua"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "pizzeria-qua-qua"
+  }
+}

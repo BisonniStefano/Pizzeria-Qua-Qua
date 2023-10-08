@@ -1,0 +1,34 @@
+.navbar{
+    padding: 1em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+}
+
+a {
+    text-decoration: none;
+}
+
+.hover-1 {
+    --c: #e20000;
+    --s: .1em;
+    
+    line-height:1em;
+    padding-bottom: calc(2.1*var(--s));
+    background: 
+      conic-gradient(from 0deg at top,var(--c) 360deg,#0000 0) 
+        left 0 bottom var(--s)/calc(2*var(--s)) var(--s) repeat-x,
+      conic-gradient(from 0deg at bottom,var(--c) 360deg,#0000 0) 
+        left var(--s) bottom 0/calc(2*var(--s)) var(--s) repeat-x;
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0) 0/var(--_p,0%) padding-box no-repeat;
+      transition: .5s;
+  }
+  .hover-1:hover {
+    --_p: 100%;
+    color: #ffffff;
+    text-shadow: 2px  2px 0 #000;
+  }
+
+  .hover-2:hover {
+    opacity: 75%;
+  }

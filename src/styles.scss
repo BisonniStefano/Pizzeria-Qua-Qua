@@ -1,0 +1,16 @@
+$primary: #ffc343;
+$secondary: #cab980;
+
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+
+
+
+a{
+    cursor: pointer;
+}
+
+.nowrap {
+    white-space: nowrap;
+}

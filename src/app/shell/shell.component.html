@@ -1,0 +1,54 @@
+<!--Screen LG-->
+<div class="container-fluid d-none d-lg-block">
+    <nav class="navbar fixed-top bg-primary navbar-expand-lg">
+        <div class="justify-content-start ">
+            <a><img src="assets/logo.jpg" class="rounded-circle" width="90" height="90" (click)="this.router.navigate(['/landing-page'])"></a>
+        </div>
+        <div id="sos" class="container-fluid justify-content-around">
+            <a class="m-0 h3 hover-1" (click)="this.router.navigate(['/landing-page'])">HOME</a>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <a class="m-0 h3 hover-1" (click)="this.router.navigate(['/menu'])">MENÙ</a> &nbsp;
+            <a class="m-0 h3 hover-1" (click)="this.router.navigate(['/contacts'])">CONTATTI</a>
+        </div>
+        <div class="justify-content-end">
+            <a class="m-0 h4 nowrap" *ngIf="!auth.isLoggedIn" (click)="this.router.navigate(['/sign-in'])">
+                Accedi<i class="bi bi-person-circle mx-2"></i>
+            </a>
+            <a class="m-0 h4 nowrap" *ngIf="auth.isLoggedIn" (click)="this.router.navigate(['/account',this.auth.uid])">
+                <img class="rounded-circle" width="90" height="90" [src]="auth.userData.photoURL ? auth.userData.photoURL : '/assets/dummy-user.svg'">
+            </a>
+        </div>
+    </nav>
+</div>
+
+
+<!--Screen SM-->
+<div class="container-fluid d-lg-none">
+    <nav class="navbar fixed-top bg-primary">
+        <div class="container-fluid justify-content-between text-center">
+            <a href="#sidebar" data-bs-toggle="offcanvas" role="button" aria-controls="sidebar"><i class="bi bi-list text-black" style="font-size: 50px;"></i></a> 
+            <a ><img src="assets/logo.jpg" class="rounded-circle" width="90" height="90" (click)="this.router.navigate(['/menu'])"></a>
+            <a *ngIf="!auth.isLoggedIn" (click)="this.router.navigate(['/sign-in'])">
+                <i class="bi bi-person-circle text-black" style="font-size: 50px;" ></i>
+            </a>
+            <a *ngIf="auth.isLoggedIn" (click)="this.router.navigate(['/account',this.auth.uid])">
+                <img class="rounded-circle" width="60" height="60" [src]="auth.userData.photoURL ? auth.userData.photoURL : '/assets/dummy-user.svg'">
+            </a>    
+          </div>
+    </nav>
+</div>
+    
+<div class="offcanvas offcanvas-start d-lg-none bg-light" tabindex="-1" id="sidebar" aria-labelledby="sidebar-label">
+    <div class="offcanvas-header bg-primary">
+      <h1 class="offcanvas-title fst-italic" id="sidebar-label">Pizzeria Qua Qua</h1>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <a class="text-decoration-none h2 hover-2" data-bs-dismiss="offcanvas" (click)="this.router.navigate(['/landing-page'])">Home</a>
+      <br><br>
+      <a class="text-decoration-none h2 hover-2" data-bs-dismiss="offcanvas" (click)="this.router.navigate(['/menu'])">Menù</a>
+      <br><br>
+      <a class="text-decoration-none h2 hover-2" data-bs-dismiss="offcanvas" (click)="this.router.navigate(['/contacts'])">Contatti</a>
+      <br><br>
+      <a class="text-decoration-none h2 hover-2" data-bs-dismiss="offcanvas" (click)="this.router.navigate(['/account', this.auth.uid])">Account</a>
+    </div>
+</div>
