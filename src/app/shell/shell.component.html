@@ -49,6 +49,6 @@
       <br><br>
       <a class="text-decoration-none h2 hover-2" data-bs-dismiss="offcanvas" (click)="this.router.navigate(['/contacts'])">Contatti</a>
       <br><br>
-      <a class="text-decoration-none h2 hover-2" data-bs-dismiss="offcanvas" (click)="this.router.navigate(['/account', this.auth.uid])">Account</a>
+      <a class="text-decoration-none h2 hover-2" data-bs-dismiss="offcanvas" *ngIf="auth.isLoggedIn" (click)="this.router.navigate(['/account', this.auth.uid])">Account</a>
     </div>
 </div>
